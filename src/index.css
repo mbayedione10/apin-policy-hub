@@ -42,6 +42,9 @@ All colors MUST be HSL.
     --ring: 215 45% 25%;
 
     --radius: 0.375rem;
+
+    /* Gradient for hero sections */
+    --gradient-primary: linear-gradient(135deg, hsl(215 45% 25%), hsl(215 40% 35%));
   }
 
   .dark {
@@ -82,5 +85,15 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Image optimization */
+  img {
+    @apply max-w-full h-auto;
   }
 }

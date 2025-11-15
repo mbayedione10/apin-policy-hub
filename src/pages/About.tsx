@@ -1,16 +1,20 @@
-import { Target, Eye, Users, Globe } from 'lucide-react';
+import { Target, Eye, Users, Globe, Lightbulb, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import researchImage from '@/assets/research-team.jpg';
 
 const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-primary text-primary-foreground py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-primary text-primary-foreground py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img src={researchImage} alt="Team" className="w-full h-full object-cover" />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">À propos d'APIN</h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl">
-            Africa Policy Intelligence Network, un think tank panafricain au service 
-            d'une gouvernance éclairée.
+            Africa Policy Intelligence Network, un réseau panafricain au service 
+            d'une gouvernance éclairée et d'un leadership intellectuel fort.
           </p>
         </div>
       </section>
@@ -100,32 +104,39 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
+                icon: Users,
                 title: 'Gouvernance et Institutions',
                 description: 'Décentralisation, réforme administrative, participation citoyenne'
               },
               {
+                icon: TrendingUp,
                 title: 'Économie et Commerce',
                 description: 'Intégration régionale, ZLECAF, développement du secteur privé'
               },
               {
+                icon: Lightbulb,
                 title: 'Énergie et Climat',
                 description: 'Transition énergétique, énergies renouvelables, changement climatique'
               },
               {
+                icon: Users,
                 title: 'Développement Social',
                 description: 'Éducation, santé, protection sociale, inégalités'
               },
               {
+                icon: Globe,
                 title: 'Agriculture et Sécurité Alimentaire',
                 description: 'Transformation agricole, chaînes de valeur, résilience'
               },
               {
+                icon: Target,
                 title: 'Paix et Sécurité',
                 description: 'Prévention des conflits, gouvernance sécuritaire, terrorisme'
               }
             ].map((domain) => (
-              <Card key={domain.title}>
+              <Card key={domain.title} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
+                  <domain.icon className="h-10 w-10 text-accent mb-3" />
                   <h3 className="text-lg font-semibold">{domain.title}</h3>
                 </CardHeader>
                 <CardContent>
@@ -139,27 +150,48 @@ const About = () => {
 
       {/* Partnerships */}
       <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Globe className="h-16 w-16 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold mb-4">Nos Partenaires</h2>
-          <p className="text-lg text-primary-foreground/90 max-w-3xl mx-auto mb-8">
-            Nous collaborons avec des institutions académiques, des organisations 
-            internationales, des gouvernements et des acteurs de la société civile pour 
-            maximiser l'impact de nos recherches.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-primary-foreground/10 px-4 py-2 rounded-full">
-              Union Africaine
-            </span>
-            <span className="bg-primary-foreground/10 px-4 py-2 rounded-full">
-              CEDEAO
-            </span>
-            <span className="bg-primary-foreground/10 px-4 py-2 rounded-full">
-              Banque Africaine de Développement
-            </span>
-            <span className="bg-primary-foreground/10 px-4 py-2 rounded-full">
-              Think Tanks Africains
-            </span>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <Globe className="h-16 w-16 mx-auto mb-6" />
+            <h2 className="text-3xl font-bold mb-4">Notre Réseau de Partenaires</h2>
+            <p className="text-lg text-primary-foreground/90 max-w-3xl mx-auto mb-8">
+              APIN collabore avec des institutions académiques de premier plan, des organisations 
+              internationales, des gouvernements et des acteurs de la société civile pour 
+              maximiser l'impact de nos recherches et construire un écosystème de production 
+              de savoirs au service des politiques publiques.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <Card className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20">
+              <CardContent className="pt-6">
+                <h3 className="font-semibold text-primary-foreground mb-2">Institutions Régionales</h3>
+                <ul className="text-sm text-primary-foreground/80 space-y-1">
+                  <li>• CEDEAO</li>
+                  <li>• Union Africaine</li>
+                  <li>• UEMOA</li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20">
+              <CardContent className="pt-6">
+                <h3 className="font-semibold text-primary-foreground mb-2">Partenaires de Développement</h3>
+                <ul className="text-sm text-primary-foreground/80 space-y-1">
+                  <li>• Banque Africaine de Développement</li>
+                  <li>• Global Development Network</li>
+                  <li>• AFD (Savoirs Sahel)</li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20">
+              <CardContent className="pt-6">
+                <h3 className="font-semibold text-primary-foreground mb-2">Think Tanks & Universités</h3>
+                <ul className="text-sm text-primary-foreground/80 space-y-1">
+                  <li>• Laboratoire d'Analyse des Politiques</li>
+                  <li>• West Africa Center for Public Policy</li>
+                  <li>• Instituts de recherche régionaux</li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
