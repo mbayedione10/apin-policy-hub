@@ -1,7 +1,5 @@
-import { Mail } from 'lucide-react';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { team } from '@/data/team';
+import TeamMemberCard from '@/components/TeamMemberCard';
 
 const Team = () => {
   return (
@@ -21,41 +19,7 @@ const Team = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member) => (
-              <Card key={member.email} className="h-full">
-                <CardHeader>
-                  <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-3xl font-bold text-muted-foreground">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-center">{member.name}</h3>
-                  <p className="text-sm text-muted-foreground text-center">{member.role}</p>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-sm text-muted-foreground">{member.bio}</p>
-                  
-                  <div>
-                    <p className="text-sm font-medium mb-2">Expertise:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {member.expertise.map((skill) => (
-                        <Badge key={skill} variant="secondary" className="text-xs">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t">
-                    <a 
-                      href={`mailto:${member.email}`}
-                      className="flex items-center gap-2 text-sm text-primary hover:underline"
-                    >
-                      <Mail className="h-4 w-4" />
-                      {member.email}
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
+              <TeamMemberCard key={member.email} member={member} />
             ))}
           </div>
         </div>
