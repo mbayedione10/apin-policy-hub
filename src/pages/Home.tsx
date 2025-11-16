@@ -146,7 +146,7 @@ const Home = () => {
       </section>
 
       {/* Expertise Areas */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Domaines d'Expertise</h2>
@@ -171,6 +171,53 @@ const Home = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Network Section with Background */}
+      <section className="py-16 bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img src={networkImage} alt="Network" className="w-full h-full object-cover" />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Un Réseau Panafricain d'Excellence
+            </h2>
+            <p className="text-lg text-primary-foreground/90">
+              APIN coordonne un écosystème de think tanks, instituts de recherche et experts 
+              à travers l'Afrique de l'Ouest pour maximiser l'impact de nos travaux.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20">
+              <CardContent className="pt-6 text-center">
+                <div className="text-4xl font-bold text-accent mb-2">5+</div>
+                <div className="text-primary-foreground/90 mb-4">Policy briefs/mois</div>
+                <p className="text-sm text-primary-foreground/80">
+                  Publications régulières sur des sujets stratégiques
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20">
+              <CardContent className="pt-6 text-center">
+                <div className="text-4xl font-bold text-accent mb-2">2</div>
+                <div className="text-primary-foreground/90 mb-4">Colloques régionaux/an</div>
+                <p className="text-sm text-primary-foreground/80">
+                  Événements majeurs rassemblant décideurs et experts
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20">
+              <CardContent className="pt-6 text-center">
+                <div className="text-4xl font-bold text-accent mb-2">100%</div>
+                <div className="text-primary-foreground/90 mb-4">Fondé sur données</div>
+                <p className="text-sm text-primary-foreground/80">
+                  Analyses rigoureuses et méthodologie scientifique
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -247,53 +294,6 @@ const Home = () => {
                 S'abonner à la newsletter
               </Link>
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Network Section with Background */}
-      <section className="py-16 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <img src={networkImage} alt="Network" className="w-full h-full object-cover" />
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Un Réseau Panafricain d'Excellence
-            </h2>
-            <p className="text-lg text-primary-foreground/90">
-              APIN coordonne un écosystème de think tanks, instituts de recherche et experts 
-              à travers l'Afrique de l'Ouest pour maximiser l'impact de nos travaux.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20">
-              <CardContent className="pt-6 text-center">
-                <div className="text-4xl font-bold text-accent mb-2">5+</div>
-                <div className="text-primary-foreground/90 mb-4">Policy briefs/mois</div>
-                <p className="text-sm text-primary-foreground/80">
-                  Publications régulières sur des sujets stratégiques
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20">
-              <CardContent className="pt-6 text-center">
-                <div className="text-4xl font-bold text-accent mb-2">2</div>
-                <div className="text-primary-foreground/90 mb-4">Colloques régionaux/an</div>
-                <p className="text-sm text-primary-foreground/80">
-                  Événements majeurs rassemblant décideurs et experts
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20">
-              <CardContent className="pt-6 text-center">
-                <div className="text-4xl font-bold text-accent mb-2">100%</div>
-                <div className="text-primary-foreground/90 mb-4">Fondé sur données</div>
-                <p className="text-sm text-primary-foreground/80">
-                  Analyses rigoureuses et méthodologie scientifique
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
