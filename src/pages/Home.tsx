@@ -1,18 +1,21 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Calendar, Users, TrendingUp, Globe, Lightbulb, Network, Target, Award } from 'lucide-react';
+import { ArrowRight, BookOpen, Users, TrendingUp, Globe, Lightbulb, Network, Target, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { PublicationCard } from '@/components/PublicationCard';
-import { EventCard } from '@/components/EventCard';
 import { publications } from '@/data/publications';
-import { events } from '@/data/events';
+import { useCountUp } from '@/hooks/useCountUp';
 import heroImage from '@/assets/hero-discussion.jpg';
 import researchImage from '@/assets/research-team.jpg';
 import networkImage from '@/assets/network-abstract.jpg';
 
 const Home = () => {
   const latestPublications = publications.slice(0, 3);
-  const upcomingEvents = events.slice(0, 2);
+  
+  const publicationsCount = useCountUp({ end: 150, duration: 2000 });
+  const researchersCount = useCountUp({ end: 25, duration: 2000 });
+  const countriesCount = useCountUp({ end: 12, duration: 2000 });
+  const eventsCount = useCountUp({ end: 30, duration: 2000 });
 
   return (
     <div className="min-h-screen">
@@ -65,19 +68,19 @@ const Home = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">150+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{publicationsCount}+</div>
               <div className="text-sm text-muted-foreground">Publications</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">25+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{researchersCount}+</div>
               <div className="text-sm text-muted-foreground">Chercheurs experts</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">12</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{countriesCount}</div>
               <div className="text-sm text-muted-foreground">Pays couverts</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">30+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{eventsCount}+</div>
               <div className="text-sm text-muted-foreground">Événements/an</div>
             </div>
           </div>
@@ -245,34 +248,6 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {latestPublications.map((publication) => (
               <PublicationCard key={publication.slug} publication={publication} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Upcoming Events */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-3xl font-bold text-foreground mb-2">
-                Événements à venir
-              </h2>
-              <p className="text-muted-foreground">
-                Rejoignez-nous lors de nos prochains événements
-              </p>
-            </div>
-            <Button asChild variant="ghost">
-              <Link to="/evenements">
-                Voir tout
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {upcomingEvents.map((event) => (
-              <EventCard key={event.slug} event={event} />
             ))}
           </div>
         </div>
