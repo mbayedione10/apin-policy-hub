@@ -1,8 +1,13 @@
+
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { createServer as createViteServer, type ViteDevServer } from "vite";
 import { type Server } from "http";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export function log(message: string) {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
