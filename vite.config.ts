@@ -4,10 +4,9 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  plugins: [
-    react(),
-    mode === "development" && componentTagger(),
-  ].filter(Boolean),
+  plugins: [react(), mode === "development" && componentTagger()].filter(
+    Boolean,
+  ),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client", "src"),
@@ -20,11 +19,11 @@ export default defineConfig(({ mode }) => ({
     emptyOutDir: true,
   },
   server: {
-    host: "0.0.0.0",
+    host: "7f395763-4459-4bf5-a8ec-75f7f65ed18f-00-2c67nu4d2rqgk.picard.replit.dev",
     port: 5000,
     strictPort: true,
     watch: {
-      ignored: ['**/vite.config.ts.timestamp-*', '**/node_modules/**'],
+      ignored: ["**/vite.config.ts.timestamp-*", "**/node_modules/**"],
     },
   },
 }));
