@@ -289,36 +289,17 @@ const Home = () => {
               Abonnez-vous à notre newsletter pour recevoir nos dernières publications, 
               analyses et informations sur nos événements.
             </p>
-            <Button asChild size="lg" className="bg-primary text-primary-foreground">
-              <Link to="/contact">
-                S'abonner à la newsletter
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-accent text-accent-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Rejoignez le Mouvement
-          </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Ensemble, construisons un leadership intellectuel africain fort et légitime, 
-            capable d'influencer durablement les politiques publiques.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button asChild size="lg" variant="outline" className="bg-transparent border-accent-foreground text-accent-foreground hover:bg-accent-foreground hover:text-accent">
-              <Link to="/equipe">
-                Découvrir l'équipe
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="bg-transparent border-accent-foreground text-accent-foreground hover:bg-accent-foreground hover:text-accent">
-              <Link to="/contact">
-                Nous contacter
-              </Link>
-            </Button>
+            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Votre adresse email"
+                className="flex-1 px-4 py-3 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                required
+              />
+              <Button type="submit" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                S'abonner
+              </Button>
+            </form>
           </div>
         </div>
       </section>
