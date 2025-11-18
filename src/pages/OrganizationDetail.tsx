@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Building2, MapPin, Calendar, Globe, Mail, Phone, MapPinned, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const MemberDetail = () => {
+const OrganizationDetail = () => {
   const { id } = useParams<{ id: string }>();
   const organization = organizations.find((org) => org.id === id);
 
@@ -14,7 +14,7 @@ const MemberDetail = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Organisation non trouvée</h1>
-          <Link to="/membres">
+          <Link to="/organisations">
             <Button variant="outline">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Retour aux organisations
@@ -30,7 +30,7 @@ const MemberDetail = () => {
       {/* Header */}
       <section className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Link to="/membres">
+          <Link to="/organisations">
             <Button variant="ghost" className="mb-4 text-primary-foreground hover:bg-primary-foreground/10">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Retour
@@ -221,4 +221,4 @@ const MemberDetail = () => {
   );
 };
 
-export default MemberDetail;
+export default OrganizationDetail;
