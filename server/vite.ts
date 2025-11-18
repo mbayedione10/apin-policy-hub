@@ -29,7 +29,7 @@ export async function setupVite(app: Express, server: Server) {
   });
 
   // Gérer toutes les routes non-API pour le routage côté client
-  app.use("*", async (req, res, next) => {
+  app.use("/*", async (req, res, next) => {
     // Ne pas intercepter les routes API
     if (req.originalUrl.startsWith('/api')) {
       return next();
