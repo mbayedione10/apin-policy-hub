@@ -28,6 +28,9 @@ export async function setupVite(app: Express, server: Server) {
     appType: "custom",
   });
 
+  // Utiliser le middleware Vite pour servir les fichiers statiques et gérer le HMR
+  app.use(vite.middlewares);
+
   // Gérer toutes les routes non-API pour le routage côté client
   app.use(/^\/(?!api\/).*/, async (req, res, next) => {
     // Ne pas intercepter les routes API
