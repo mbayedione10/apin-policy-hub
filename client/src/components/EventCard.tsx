@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 import { Calendar, Clock, MapPin, Users } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';

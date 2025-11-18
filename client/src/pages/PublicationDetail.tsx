@@ -1,4 +1,5 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'wouter';
+import { Link } from 'wouter';
 import { Calendar, User, Download, ArrowLeft, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -6,7 +7,8 @@ import { Separator } from '@/components/ui/separator';
 import { publications } from '@/data/publications';
 
 const PublicationDetail = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const params = useParams();
+  const slug = params.slug;
   const publication = publications.find(p => p.slug === slug);
 
   if (!publication) {

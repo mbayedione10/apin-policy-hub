@@ -1,4 +1,5 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'wouter';
+import { Link } from 'wouter';
 import { organizations } from '@/data/organizations';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,7 +7,8 @@ import { Building2, MapPin, Calendar, Globe, Mail, Phone, MapPinned, ArrowLeft }
 import { Button } from '@/components/ui/button';
 
 const OrganizationDetail = () => {
-  const { id } = useParams<{ id: string }>();
+  const params = useParams();
+  const id = params.id;
   const organization = organizations.find((org) => org.id === id);
 
   if (!organization) {

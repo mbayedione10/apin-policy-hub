@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 import { Mail, MapPin, Phone } from 'lucide-react';
 
 export const Footer = () => {

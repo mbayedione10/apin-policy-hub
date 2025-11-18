@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Building2, MapPin } from 'lucide-react';
 import { Organization } from '@/data/organizations';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 interface MemberOrganizationCardProps {
   organization: Organization;
