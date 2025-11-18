@@ -1,3 +1,6 @@
+import africaJomLogo from '@/assets/org-logos/africa-jom-center.png';
+import coappLogo from '@/assets/org-logos/coapp.png';
+
 export interface Organization {
   id: string;
   name: string;
@@ -88,5 +91,55 @@ export const organizations: Organization[] = [
       "Marché commun",
     ],
     partnerships: ["CEDEAO", "BCEAO", "France"],
+  },
+  {
+    id: "africa-jom-center",
+    name: "Africa Jom Center",
+    acronym: "AJC",
+    logo: africaJomLogo,
+    country: "Sénégal",
+    description: "Centre de recherche et d'innovation dédié au développement des politiques publiques en Afrique de l'Ouest, avec un focus particulier sur le Sénégal.",
+    mission: "Promouvoir l'excellence dans la recherche en politiques publiques et accompagner les décideurs africains dans la formulation de politiques innovantes et inclusives.",
+    expertiseAreas: [
+      "Recherche en politiques publiques",
+      "Innovation sociale",
+      "Développement durable",
+      "Gouvernance locale",
+    ],
+    founded: "2015",
+    website: "https://www.africajomcenter.org",
+    email: "contact@africajomcenter.org",
+    address: "Dakar, Sénégal",
+    keyProjects: [
+      "Programme de recherche sur les politiques éducatives",
+      "Initiative pour la gouvernance participative",
+      "Observatoire des politiques de santé publique",
+    ],
+    partnerships: ["APIN", "Universités sénégalaises", "ONG locales"],
+  },
+  {
+    id: "coapp",
+    name: "Centre Ouest-Africain de Politiques Publiques",
+    acronym: "COAPP",
+    logo: coappLogo,
+    country: "Sénégal",
+    description: "Think tank régional spécialisé dans l'analyse et le développement de politiques publiques adaptées aux contextes ouest-africains.",
+    mission: "Contribuer à l'amélioration de la qualité des politiques publiques en Afrique de l'Ouest par la recherche, le conseil et le renforcement des capacités.",
+    expertiseAreas: [
+      "Analyse des politiques publiques",
+      "Conseil stratégique",
+      "Formation et renforcement de capacités",
+      "Évaluation d'impact",
+    ],
+    founded: "2018",
+    website: "https://www.coapp.org",
+    email: "info@coapp.org",
+    address: "Dakar, Sénégal",
+    keyProjects: [
+      "Évaluation des politiques agricoles régionales",
+      "Programme de formation des cadres publics",
+      "Recherche sur la transformation digitale",
+    ],
+    partnerships: ["CEDEAO", "UEMOA", "Banque Mondiale"],
   },
 ];
