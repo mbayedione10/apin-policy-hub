@@ -1,4 +1,3 @@
-
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
@@ -29,22 +28,38 @@ export async function setupVite(app: Express, server: Server) {
     appType: "custom",
   });
 
-  app.use(vite.middlewares);
-  app.use(async (req, res, next) => {
+  // Gérer toutes les routes non-API pour le routage côté client
+  app.use("*", async (req, res, next) => {
+    // Ne pas intercepter les routes API
+    if (req.originalUrl.startsWith('/api')) {
+      return next();
+    }
+
     const url = req.originalUrl;
 
     try {
-      const clientPath = path.resolve(__dirname, "..", "client");
-      let template = fs.readFileSync(
-        path.resolve(clientPath, "index.html"),
-        "utf-8"
-      );
+      let template;
 
-      template = await vite.transformIndexHtml(url, template);
+      if (vite.config.mode === "development") { // Utiliser vite.config.mode au lieu de isDevelopment
+        template = fs.readFileSync(
+          path.resolve(__dirname, "../client/index.html"),
+          "utf-8",
+        );
+        template = await vite.transformIndexHtml(url, template);
+      } else {
+        template = fs.readFileSync(
+          path.resolve(__dirname, "../dist/public/index.html"),
+          "utf-8",
+        );
+      }
+
       res.status(200).set({ "Content-Type": "text/html" }).end(template);
-    } catch (e) {
-      vite.ssrFixStacktrace(e as Error);
-      next(e);
+    } catch (e: any) {
+      if (vite.config.mode === "development" && vite) { // Utiliser vite.config.mode au lieu de isDevelopment
+        vite.ssrFixStacktrace(e);
+      }
+      console.log(e.stack);
+      res.status(500).end(e.stack);
     }
   });
 }
