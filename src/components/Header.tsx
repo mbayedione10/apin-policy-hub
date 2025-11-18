@@ -11,6 +11,7 @@ export const Header = () => {
     { name: 'Publications', href: '/publications' },
     { name: 'Actualités', href: '/actualites' },
     { name: 'Équipe', href: '/equipe' },
+    { name: 'Membres', href: '/membres' },
     { name: 'Contact', href: '/contact' },
   ];
 
