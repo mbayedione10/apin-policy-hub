@@ -32,9 +32,11 @@ export async function setupVite(app: Express, server: Server) {
   app.use(vite.middlewares);
 
   // Gérer toutes les routes non-API pour le routage côté client
-  app.use(/^\/(?!api\/).*/, async (req, res, next) => {
-    // Ne pas intercepter les routes API
-    if (req.originalUrl.startsWith('/api')) {
+  app.use(async (req, res, next) => {
+    // Ignorer les routes API et les fichiers statiques
+    if (req.originalUrl.startsWith('/api') || 
+        req.originalUrl.includes('.') || 
+        req.originalUrl.startsWith('/@')) {
       return next();
     }
 
@@ -77,7 +79,10 @@ export function serveStatic(app: Express) {
 
   app.use(express.static(distPath));
 
-  app.use(/^\/(?!api\/).*/, (_req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
+  app.use((req, res) => {
+    // Ne servir index.html que si ce n'est pas une route API ou un fichier statique
+    if (!req.originalUrl.startsWith('/api') && !req.originalUrl.includes('.')) {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
   });
 }
