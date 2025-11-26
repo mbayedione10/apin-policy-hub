@@ -21,6 +21,31 @@ export interface Organization {
 
 export const organizations: Organization[] = [
   {
+    id: "africa-jom-center",
+    name: "Africa Jom Center",
+    acronym: "AJC",
+    logo: africaJomLogo,
+    country: "Sénégal",
+    description: "Centre de recherche et d'innovation dédié au développement des politiques publiques en Afrique de l'Ouest, avec un focus particulier sur le Sénégal.",
+    mission: "Promouvoir l'excellence dans la recherche en politiques publiques et accompagner les décideurs africains dans la formulation de politiques innovantes et inclusives.",
+    expertiseAreas: [
+      "Recherche en politiques publiques",
+      "Innovation sociale",
+      "Développement durable",
+      "Gouvernance locale",
+    ],
+    founded: "2015",
+    website: "https://www.africajomcenter.org",
+    email: "contact@africajomcenter.org",
+    address: "Dakar, Sénégal",
+    keyProjects: [
+      "Programme de recherche sur les politiques éducatives",
+      "Initiative pour la gouvernance participative",
+      "Observatoire des politiques de santé publique",
+    ],
+    partnerships: ["APIN", "Universités sénégalaises", "ONG locales"],
+  },
+  {
     id: "cedeao",
     name: "Communauté Économique des États de l'Afrique de l'Ouest",
     acronym: "CEDEAO",
@@ -91,31 +116,6 @@ export const organizations: Organization[] = [
       "Marché commun",
     ],
     partnerships: ["CEDEAO", "BCEAO", "France"],
-  },
-  {
-    id: "africa-jom-center",
-    name: "Africa Jom Center",
-    acronym: "AJC",
-    logo: africaJomLogo,
-    country: "Sénégal",
-    description: "Centre de recherche et d'innovation dédié au développement des politiques publiques en Afrique de l'Ouest, avec un focus particulier sur le Sénégal.",
-    mission: "Promouvoir l'excellence dans la recherche en politiques publiques et accompagner les décideurs africains dans la formulation de politiques innovantes et inclusives.",
-    expertiseAreas: [
-      "Recherche en politiques publiques",
-      "Innovation sociale",
-      "Développement durable",
-      "Gouvernance locale",
-    ],
-    founded: "2015",
-    website: "https://www.africajomcenter.org",
-    email: "contact@africajomcenter.org",
-    address: "Dakar, Sénégal",
-    keyProjects: [
-      "Programme de recherche sur les politiques éducatives",
-      "Initiative pour la gouvernance participative",
-      "Observatoire des politiques de santé publique",
-    ],
-    partnerships: ["APIN", "Universités sénégalaises", "ONG locales"],
   },
   {
     id: "coapp",

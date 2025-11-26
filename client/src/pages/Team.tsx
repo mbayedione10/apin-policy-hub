@@ -24,23 +24,6 @@ const Team = () => {
           </div>
         </div>
       </section>
-
-      {/* Join Section */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <h2 className="text-3xl font-bold mb-4">Rejoignez-nous</h2>
-          <p className="text-lg text-muted-foreground mb-6">
-            Nous recherchons constamment des chercheurs talentueux et passionnés 
-            pour rejoindre notre équipe.
-          </p>
-          <a 
-            href="mailto:recrutement@apin-network.org"
-            className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors"
-          >
-            Postuler
-          </a>
-        </div>
-      </section>
     </div>
   );
 };
