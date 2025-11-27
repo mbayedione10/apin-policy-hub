@@ -1,5 +1,5 @@
-import africaJomLogo from '@/assets/org-logos/africa-jom-center.png';
-import coappLogo from '@/assets/org-logos/coapp.png';
+import africaJomLogo from "@/assets/org-logos/africa-jom-center.png";
+import coappLogo from "@/assets/org-logos/coapp.png";
 
 export interface Organization {
   id: string;
@@ -26,8 +26,10 @@ export const organizations: Organization[] = [
     acronym: "AJC",
     logo: africaJomLogo,
     country: "Sénégal",
-    description: "Centre de recherche et d'innovation dédié au développement des politiques publiques en Afrique de l'Ouest, avec un focus particulier sur le Sénégal.",
-    mission: "Promouvoir l'excellence dans la recherche en politiques publiques et accompagner les décideurs africains dans la formulation de politiques innovantes et inclusives.",
+    description:
+      "Centre de recherche et d'innovation dédié au développement des politiques publiques en Afrique de l'Ouest, avec un focus particulier sur le Sénégal.",
+    mission:
+      "Promouvoir l'excellence dans la recherche en politiques publiques et accompagner les décideurs africains dans la formulation de politiques innovantes et inclusives.",
     expertiseAreas: [
       "Recherche en politiques publiques",
       "Innovation sociale",
@@ -50,8 +52,10 @@ export const organizations: Organization[] = [
     name: "Communauté Économique des États de l'Afrique de l'Ouest",
     acronym: "CEDEAO",
     country: "Nigeria",
-    description: "Organisation régionale regroupant quinze pays d'Afrique de l'Ouest, œuvrant pour l'intégration économique et la coopération régionale.",
-    mission: "Promouvoir la coopération et l'intégration dans la perspective d'une Union Économique de l'Afrique de l'Ouest en vue d'élever le niveau de vie de ses peuples.",
+    description:
+      "Organisation régionale regroupant quinze pays d'Afrique de l'Ouest, œuvrant pour l'intégration économique et la coopération régionale.",
+    mission:
+      "Promouvoir la coopération et l'intégration dans la perspective d'une Union Économique de l'Afrique de l'Ouest en vue d'élever le niveau de vie de ses peuples.",
     expertiseAreas: [
       "Intégration économique régionale",
       "Sécurité et paix",
@@ -74,8 +78,10 @@ export const organizations: Organization[] = [
     name: "Union Africaine",
     acronym: "UA",
     country: "Éthiopie",
-    description: "Organisation continentale composée de 55 États membres qui œuvre pour l'intégration politique et socio-économique du continent africain.",
-    mission: "Réaliser une plus grande unité et solidarité entre les pays africains et promouvoir la paix, la sécurité et la stabilité sur le continent.",
+    description:
+      "Organisation continentale composée de 55 États membres qui œuvre pour l'intégration politique et socio-économique du continent africain.",
+    mission:
+      "Réaliser une plus grande unité et solidarité entre les pays africains et promouvoir la paix, la sécurité et la stabilité sur le continent.",
     expertiseAreas: [
       "Gouvernance et démocratie",
       "Paix et sécurité",
@@ -98,8 +104,10 @@ export const organizations: Organization[] = [
     name: "Union Économique et Monétaire Ouest Africaine",
     acronym: "UEMOA",
     country: "Burkina Faso",
-    description: "Organisation de huit États d'Afrique de l'Ouest partageant une monnaie commune, le franc CFA.",
-    mission: "Réaliser l'intégration économique des États membres à travers le renforcement de la compétitivité des activités économiques dans le cadre d'un marché ouvert et concurrentiel.",
+    description:
+      "Organisation de huit États d'Afrique de l'Ouest partageant une monnaie commune, le franc CFA.",
+    mission:
+      "Réaliser l'intégration économique des États membres à travers le renforcement de la compétitivité des activités économiques dans le cadre d'un marché ouvert et concurrentiel.",
     expertiseAreas: [
       "Union monétaire",
       "Harmonisation fiscale",
@@ -123,8 +131,10 @@ export const organizations: Organization[] = [
     acronym: "COAPP",
     logo: coappLogo,
     country: "Sénégal",
-    description: "Think Tank indépendant dédié à l'analyse, à la coconstruction et à l'évaluation des politiques publiques en Afrique de l'Ouest. Le COAPP œuvre pour renforcer la souveraineté intellectuelle du continent en produisant des connaissances rigoureuses et accessibles, en favorisant le dialogue entre chercheurs, décideurs, OSC, jeunes et citoyens, et en contribuant à la formulation de réformes publiques adaptées aux réalités africaines.",
-    mission: "Produire et diffuser une expertise accessible, rigoureuse et contextualisée. Influencer les décisions publiques grâce à des analyses fondées sur des données fiables. Promouvoir la participation citoyenne et l'engagement des jeunes dans les débats publics. Créer une passerelle structurée entre science, politique et société. Soutenir une dynamique panafricaine de construction et de diffusion du savoir.",
+    description:
+      "Le COAPP est un think tank indépendant qui se consacre à l'analyse, à la co-construction et à l'évaluation des politiques publiques en Afrique de l'Ouest. L’objectif du centre est de renforcer la souveraineté intellectuelle du continent en produisant des recherches de haute qualité, accessibles à tous et en encourageant la collaboration entre acteurs clés des politiques publiques. Il vise à contribuer à l’élaboration de réformes publiques qui répondent aux besoins spécifiques de l’Afrique.",
+    mission:
+      "Fournir une expertise rigoureuse et accessible, d’éclairer les décisions publiques avec des données fiables, de promouvoir la participation citoyenne et l’engagement des jeunes, tout en créant un pont entre science, politique et société dans une perspective panafricaine de construction et de partage du savoir.",
     expertiseAreas: [
       "Souveraineté intellectuelle",
       "Analyse et Recherche en politiques publiques",
@@ -145,6 +155,6 @@ export const organizations: Organization[] = [
       "Podcast mensuel avec chercheurs et praticiens",
       "Site web - espace central de ressources (analyses, vidéos, podcasts)",
     ],
-    partnerships: ["CEDEAO", "UEMOA", "Universités africaines", "OSC régionales", "Médias panafricains", "Fondations internationales"],
+    partnerships: ["Trust Africa", "OSF", "LSD"],
   },
 ];
