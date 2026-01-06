@@ -1,5 +1,5 @@
 import africaJomLogo from "@/assets/org-logos/africa-jom-center.png";
-import coappLogo from "@/assets/org-logos/coapp.png";
+import coappLogo from "@/assets/org-logos/coapp.webp";
 
 export interface Organization {
   id: string;
@@ -144,7 +144,7 @@ export const organizations: Organization[] = [
       "Veille stratégique régionale",
     ],
     founded: "2018",
-    website: "https://www.coapp.org",
+    website: "https://cppaoorg.com",
     email: "info@coapp.org",
     address: "Dakar, Sénégal",
     keyProjects: [
